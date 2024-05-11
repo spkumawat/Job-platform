@@ -9,6 +9,7 @@ const jobRoutes = require('./routes/jobRoutes');
 const authenticateJWT = require('./middleware/authMiddleware');
 
 const app = express();
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect(process.env.DB_URI, {
