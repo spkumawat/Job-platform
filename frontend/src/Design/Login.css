@@ -1,0 +1,42 @@
+/* src/components/Login.css */
+
+form {
+    max-width: 400px;
+    margin-top : 20px;
+    padding: 20px;
+    border: 1px solid #333; /* Dark border color */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    /* Change font family */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333; /* Dark border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Change font family */
+    font-size: 16px; /* Change font size */
+}
+
+button[type="submit"] {
+   
+    background-color: #007bff;
+    width: 90%; 
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif; 
+      margin-right : 200px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

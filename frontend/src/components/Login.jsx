@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authContext'; // Ensure this path matches your file structure
+import { useAuth } from '../context/authContext';
+import '../Design/Login.css' // Ensure this path matches your file structure
 
 function Login() {
     const [credentials, setCredentials] = useState({ email: '', password: '' });

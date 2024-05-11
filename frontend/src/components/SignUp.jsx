@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authContext'; // Importing useAuth from AuthContext
+import { useAuth } from '../context/authContext'; 
+import '../Design/SignUp.css'
+// Importing useAuth from AuthContext
 
 function Signup() {
     const [formData, setFormData] = useState({

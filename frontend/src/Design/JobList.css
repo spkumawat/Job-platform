@@ -1,0 +1,33 @@
+/* src/components/JobList.css */
+
+.job-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.job-list-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.job-item {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-description {
+    font-size: 16px;
+}
+
+.job-item:last-child {
+    margin-bottom: 0;
+}

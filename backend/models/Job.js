@@ -16,7 +16,7 @@ const jobSchema = new Schema({
         appliedAt: { type: Date, default: Date.now },
         status: {
             type: String,
-            enum: ['Applied', 'Reviewed', 'Interviewing', 'Offered', 'Rejected'],
+            enum: ['Applied', 'Reviewed', 'Interviewing', 'Accepted', 'Offered', 'Rejected'],
             default: 'Applied'
         }
     }] 

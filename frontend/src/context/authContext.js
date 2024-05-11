@@ -2,38 +2,41 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext({
-    isAuthenticated: false,  // Default value
+    isAuthenticated: false,  // Default initial state
     user: null,
     login: () => {},
     logout: () => {}
 });
 
 export const AuthProvider = ({ children }) => {
-    const initialToken = localStorage.getItem('token');
     const [user, setUser] = useState(null);
+    const initialToken = localStorage.getItem('token');
     const [token, setToken] = useState(initialToken);
-    const [isAuthenticated, setIsAuthenticated] = useState(!!initialToken);  // Optimistically set isAuthenticated
+    const [isAuthenticated, setIsAuthenticated] = useState(!!initialToken);
 
     useEffect(() => {
-        const validateToken = async () => {
-            if (token) {
-                try {
-                    const response = await axios.get('http://localhost:4000/users/validate', {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
-                    setUser(response.data.data);
-                    setIsAuthenticated(true);
-                } catch (error) {
-                    console.log('Token validation failed:', error);
-                    logout();
-                }
-            } else {
-                setIsAuthenticated(false);
-            }
-        };
+        if (token) {
+            validateToken();
+        } else {
+            // Immediately reflect no authentication if there is no token
+            setIsAuthenticated(false);
+            setUser(null);
+        }
+    }, [token]); // Effect runs on token change
 
-        validateToken();
-    }, [token]);  // React on token changes
+    const validateToken = async () => {
+        try {
+            const response = await axios.get('http://localhost:4000/users/validate', {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            console.log(response.data);
+            setUser(response.data.data);
+            setIsAuthenticated(true);
+        } catch (error) {
+            console.log('Token validation failed:', error);
+            logout();
+        }
+    };
 
     const login = (newToken, newUser) => {
         localStorage.setItem('token', newToken);

@@ -1,0 +1,104 @@
+/* src/components/CandidateDashboard.css */
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.job-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-item {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.job-item:last-child {
+    margin-bottom: 0;
+}
+
+.job-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.job-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.job-details-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.apply-button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-description {
+    font-size: 16px;
+}
+/* ../Design/CandidateDashboard.css */
+
+/* Align buttons to the right */
+.job-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the buttons */
+.job-list li button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-button {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.view-details-button {
+    background-color: #007bff;
+    color: #fff;
+}
+.success-message {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    position: fixed; /* Fixed position */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    z-index: 999; /* Ensure it appears on top of other elements */
+}
