@@ -17,7 +17,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/users/login', credentials);
+            const response = await axios.post('https://job-platform-tcd5.vercel.app/users/login', credentials);
             const { token, user } = response.data;  // Destructure token and user data from response
             login(token, user);  // Update auth context and store token in localStorage
             console.log(token,user);

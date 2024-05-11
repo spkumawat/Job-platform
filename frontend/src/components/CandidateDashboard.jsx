@@ -23,7 +23,7 @@ function CandidateDashboard() {
 
     const fetchAvailableJobs = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/jobs/', {
+            const response = await axios.get('https://job-platform-tcd5.vercel.app/jobs/', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setAvailableJobs(response.data.jobs);
@@ -37,7 +37,7 @@ function CandidateDashboard() {
     const fetchAppliedJobs = async () => {
         if (user == null) return;
         try {
-            const response = await axios.get(`http://localhost:4000/jobs/${user.id}/applied-jobs`, {
+            const response = await axios.get(`https://job-platform-tcd5.vercel.app/jobs/${user.id}/applied-jobs`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setAppliedJobs(response.data);
@@ -50,7 +50,7 @@ function CandidateDashboard() {
     
     const handleApply = async (jobId) => {
         try {
-            await axios.post(`http://localhost:4000/jobs/${jobId}/apply`, {}, {
+            await axios.post(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/apply`, {}, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             fetchAppliedJobs(); // Refresh the list of applications after applying

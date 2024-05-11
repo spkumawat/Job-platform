@@ -7,7 +7,7 @@ function JobList() {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/jobs')
+        axios.get('https://job-platform-tcd5.vercel.app/jobs')
             .then(response => setJobs(response.data.jobs))
             .catch(error => console.error('Error fetching jobs:', error));
     }, []);

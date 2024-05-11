@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
     const validateToken = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/users/validate', {
+            const response = await axios.get('https://job-platform-tcd5.vercel.app/users/validate', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             console.log(response.data);

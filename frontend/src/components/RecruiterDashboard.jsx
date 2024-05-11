@@ -27,7 +27,7 @@ function RecruiterDashboard() {
     const fetchJobs = async () => {
        
         try {
-            const response = await axios.get(`http://localhost:4000/jobs/${user.id}/jobwithrecruiter`, {
+            const response = await axios.get(`https://job-platform-tcd5.vercel.app/jobs/${user.id}/jobwithrecruiter`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             
@@ -41,7 +41,7 @@ function RecruiterDashboard() {
 
     const fetchApplicants = async (jobId) => {
         try {
-            const response = await axios.get(`http://localhost:4000/jobs/${jobId}/applicants`, {
+            const response = await axios.get(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/applicants`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             const job = jobs.find(job => job._id === jobId);
@@ -57,8 +57,8 @@ function RecruiterDashboard() {
     const handleAccept = async (candidateId) => {
         const jobId = selectedJob._id; // Ensure selectedJob is available in the scope
         try {
-            console.log(`http://localhost:4000/jobs/${jobId}/applicants/${candidateId}/status`);
-            const response = await axios.put(`http://localhost:4000/jobs/${jobId}/applicants/${candidateId}/status`, {
+            console.log(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/applicants/${candidateId}/status`);
+            const response = await axios.put(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/applicants/${candidateId}/status`, {
                 newStatus: 'Accepted'
             }, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -73,7 +73,7 @@ function RecruiterDashboard() {
     const handleReject = async (candidateId) => {
         const jobId = selectedJob._id; // Ensure selectedJob is available in the scope
         try {
-            const response = await axios.put(`http://localhost:4000/jobs/${jobId}/applicants/${candidateId}/status`, {
+            const response = await axios.put(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/applicants/${candidateId}/status`, {
                 newStatus: 'Rejected'
             }, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -89,7 +89,7 @@ function RecruiterDashboard() {
         try {
             e.stopPropagation(); // Corrected method name
             
-            await axios.delete(`http://localhost:4000/jobs/${jobId}/removejob`, {
+            await axios.delete(`https://job-platform-tcd5.vercel.app/jobs/${jobId}/removejob`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             // Remove the deleted job from the local state
@@ -155,7 +155,7 @@ export default RecruiterDashboard;
 
 //     const fetchJobs = async () => {
 //         try {
-//             const response = await axios.get('http://localhost:4000/jobs', {
+//             const response = await axios.get('https://job-platform-tcd5.vercel.app/jobs', {
 //                 headers: { Authorization: `Bearer ${user.token}` }
 //             });
 //             setJobs(response.data.jobs);

@@ -10,7 +10,7 @@ function JobPostingModal({ onClose, userToken, refreshJobs, postedBy }) {
         
         try {
             console.log('going in for posting');
-            await axios.post('http://localhost:4000/jobs/post-job', {
+            await axios.post('https://job-platform-tcd5.vercel.app/jobs/post-job', {
                 title: title.value,
                 description: description.value,
                 jobRole: jobRole.value,

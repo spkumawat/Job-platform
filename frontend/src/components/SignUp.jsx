@@ -23,7 +23,7 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/users/signup', formData);
+            const response = await axios.post('https://job-platform-tcd5.vercel.app/users/signup', formData);
             const { token, user } = response.data;
             login(token, user); // Set token in local storage and update auth state
             navigate('/'); // Redirect to home on successful signup
