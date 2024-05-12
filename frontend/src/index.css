@@ -35,7 +35,10 @@ button {
     border-radius: 5px;
     width: 50%;
 }
-
+.modal-content-list{
+    height: 400px;
+    overflow-y: scroll;
+}
 .close {
     cursor: pointer;
     float: right;

@@ -7,7 +7,7 @@ function AppliedJobsModal({ appliedJobs, onClose }) {
             <div className="modal-content">
                 <span className="close" onClick={onClose}>&times;</span>
                 <h2>Applied Jobs</h2>
-                <ul>
+                <ul className='modal-content-list'>
                     {appliedJobs && appliedJobs.length > 0 && appliedJobs.map(job => (
                         <li key={job.jobId}>
                             {job.jobName} : {job.jobRole} : {job.status}
